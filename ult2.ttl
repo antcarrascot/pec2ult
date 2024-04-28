@@ -1,0 +1,529 @@
+@prefix : <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5> .
+
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5> rdf:type owl:Ontology ;
+                                                                            rdfs:comment "Ontología de la encuesta de satisfacción de los vuelos de Qatar Airways y Ryanair" ;
+                                                                            rdfs:isDefinedBy "Antonio Carrasco" ;
+                                                                            rdfs:label "pec2" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/DestinationFlight
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/DestinationFlight> rdf:type owl:ObjectProperty ,
+                                                                                                      owl:AsymmetricProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> ;
+                                                                                             rdfs:range <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country> ;
+                                                                                             rdfs:comment "Destination country for the flight" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/OriginFlight
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/OriginFlight> rdf:type owl:ObjectProperty ,
+                                                                                                 owl:AsymmetricProperty ;
+                                                                                        rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> ;
+                                                                                        rdfs:range <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country> ;
+                                                                                        rdfs:comment "Origin country for the flight" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasAirline
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasAirline> rdf:type owl:ObjectProperty ,
+                                                                                               owl:AsymmetricProperty ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                      rdfs:range <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Airline> ;
+                                                                                      rdfs:comment "Airline used by the client" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasFlight
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasFlight> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasReview
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasReview> rdf:type owl:ObjectProperty ;
+                                                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Author> ;
+                                                                                     rdfs:range <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasDatePublished
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasDatePublished> rdf:type owl:DatatypeProperty ;
+                                                                                            rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                            rdfs:range xsd:dateTime ;
+                                                                                            rdfs:comment "Date the review was published" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                     rdfs:range xsd:int ;
+                                                                                     rdfs:comment "Valoracion numérica registrada por el usuario" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasTitle
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasTitle> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                    rdfs:range xsd:string ;
+                                                                                    rdfs:comment "The customer review title" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasValue
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasValue> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CustomerSupport> ,
+                                                                                                <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightReservation> ,
+                                                                                                <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FoodService> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aircraft
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aircraft> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> ;
+                                                                                    rdfs:comment "different airplane models" ;
+                                                                                    rdfs:label "Aircraft" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Airline
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Airline> rdf:type owl:Class ;
+                                                                                   rdfs:comment "The different airlens" ;
+                                                                                   rdfs:label "Airline" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                  rdfs:comment "Aspects on which it has been valued" ;
+                                                                                  rdfs:label "Aspect" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Attention
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Attention> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> ;
+                                                                                     rdfs:comment "Care received" ;
+                                                                                     rdfs:label "Attention" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Author
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Author> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                  rdfs:comment "Authors who responded to the survey" ;
+                                                                                  rdfs:label "Author" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CheckIn
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CheckIn> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> ;
+                                                                                   rdfs:comment "The Check-in service for clients" ;
+                                                                                   rdfs:label "CheckIn" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Class
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Class> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Seat> ;
+                                                                                 rdfs:comment "The different classes offered by the flight, such as tourist, business..." ;
+                                                                                 rdfs:label "Class" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Cost
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Cost> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> ;
+                                                                                rdfs:comment "Experience that the client has had regarding the costs of some service" ;
+                                                                                rdfs:label "Cost" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country> rdf:type owl:Class ;
+                                                                                   rdfs:comment "Different countries of the flights, both origin and destination" ;
+                                                                                   rdfs:label "Country" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Crew
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Crew> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> ;
+                                                                                rdfs:comment "everything related to the flight crew" ;
+                                                                                rdfs:label "Crew" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CustomerSupport
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CustomerSupport> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> ;
+                                                                                           rdfs:comment "All the support the customers need" ;
+                                                                                           rdfs:label "CustomerSupport" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentCustomerSupport
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentCustomerSupport> rdf:type owl:Class ;
+                                                                                                   rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CustomerSupport> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFlightReservation
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFlightReservation> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightReservation> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFoodService
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFoodService> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FoodService> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> rdf:type owl:Class ;
+                                                                                  rdfs:comment "All the flight details" ;
+                                                                                  rdfs:label "Flight" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightComfort
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightComfort> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> ;
+                                                                                         rdfs:comment "Comfort in flight" ;
+                                                                                         rdfs:label "FlightComfort" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightPunctuality
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightPunctuality> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> ;
+                                                                                             rdfs:comment "Punctuality of the flight in the user experience" ;
+                                                                                             rdfs:label "FlightPunctuality" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightReservation
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightReservation> rdf:type owl:Class ;
+                                                                                             rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> ;
+                                                                                             rdfs:comment "Service for reservation the flight" ;
+                                                                                             rdfs:label "FlightReservation" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightTicketManagement
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightTicketManagement> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> ;
+                                                                                                  rdfs:comment "All the ticket management as buy or solve an issue" ;
+                                                                                                  rdfs:label "FlightTicketManagement" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FoodService
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FoodService> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> ;
+                                                                                       rdfs:comment "Food and drink service" ;
+                                                                                       rdfs:label "FoodService" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Luggage
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Luggage> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> ;
+                                                                                   rdfs:comment "Luggage service that the client can use" ;
+                                                                                   rdfs:label "Luggage" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/NegativeKeyword
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/NegativeKeyword> rdf:type owl:Class ;
+                                                                                           owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment>
+                                                                                                                                      [ rdf:type owl:Class ;
+                                                                                                                                        owl:complementOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/PositiveKeyword>
+                                                                                                                                      ]
+                                                                                                                                    ) ;
+                                                                                                                 rdf:type owl:Class
+                                                                                                               ] ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment> ;
+                                                                                           rdfs:comment "Keywords used to express negative feelings" ;
+                                                                                           rdfs:label "NegativeKeyword" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Position
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Position> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Seat> ;
+                                                                                    rdfs:comment "User positions such as near the window, in the hallway..." ;
+                                                                                    rdfs:label "Position" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/PositiveKeyword
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/PositiveKeyword> rdf:type owl:Class ;
+                                                                                           owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment>
+                                                                                                                                      [ rdf:type owl:Class ;
+                                                                                                                                        owl:complementOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/NegativeKeyword>
+                                                                                                                                      ]
+                                                                                                                                    ) ;
+                                                                                                                 rdf:type owl:Class
+                                                                                                               ] ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment> ;
+                                                                                           rdfs:comment "Keywords used to express positive feelings" ;
+                                                                                           rdfs:label "PositiveKeyword" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Quality
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Quality> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> ;
+                                                                                   rdfs:comment "Punctuality of the flight that the client has had in their experience" ;
+                                                                                   rdfs:label "Quality" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> rdf:type owl:Class ;
+                                                                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating> ;
+                                                                                                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                        owl:onDataRange owl:rational
+                                                                                                      ] ;
+                                                                                  rdfs:comment "The responses in the satisfaction study" ;
+                                                                                  rdfs:label "Review" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Seat
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Seat> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> ;
+                                                                                rdfs:comment "Different seat details" ;
+                                                                                rdfs:label "Seat" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                                     rdfs:comment "Feelings conveyed in the response" ;
+                                                                                     rdfs:label "Sentiment" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service> rdf:type owl:Class ;
+                                                                                   rdfs:comment "Services that the client can use" ;
+                                                                                   rdfs:label "Service" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Size
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Size> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Seat> ;
+                                                                                rdfs:comment "Different sizes of seats" ;
+                                                                                rdfs:label "Size" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Speed
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Speed> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect> ;
+                                                                                 rdfs:comment "Speed ​​of different actions" ;
+                                                                                 rdfs:label "Speed" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/TypeTraveller
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/TypeTraveller> rdf:type owl:Class ;
+                                                                                         rdfs:comment "Different kind of travellers as business, family, etc..." ;
+                                                                                         rdfs:label "TypeTraveller" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#3
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#3> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasAirline> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/QatarAirways> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating> 10 ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasTitle> "I hope they update the A380" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#4
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#4> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasAirline> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/QatarAirways> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasFlight> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/AucklandDoha> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating> 7 ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasTitle> "I’d rate them maybe 7/10" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#6
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#6> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasAirline> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Ryanair> ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating> 5 ;
+                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasTitle> "they are really not better value" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Auckland
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Auckland> rdf:type owl:NamedIndividual ,
+                                                                                             <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/AucklandDoha
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/AucklandDoha> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight> ;
+                                                                                        <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/DestinationFlight> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Doha> ;
+                                                                                        <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/OriginFlight> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Auckland> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Boeing360
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Boeing360> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aircraft> ;
+                                                                                     owl:sameAs "https://dbpedia.org/describe/?url=http%3A%2F%2Fdbpedia.org%2Fresource%2FBoeing_Model_360&sid=67863" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Doha
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Doha> rdf:type owl:NamedIndividual ,
+                                                                                         <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country> ;
+                                                                                owl:sameAs "https://dbpedia.org/describe/?url=http%3A%2F%2Fdbpedia.org%2Fresource%2FDoha&sid=67863" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Pilot
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Pilot> rdf:type owl:NamedIndividual ,
+                                                                                          <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Crew> ;
+                                                                                 owl:sameAs "https://dbpedia.org/describe/?url=http%3A%2F%2Fdbpedia.org%2Fresource%2FAircraft_pilot&sid=67863" .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/QatarAirways
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/QatarAirways> rdf:type owl:NamedIndividual ,
+                                                                                                 <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Airline> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Ryanair
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Ryanair> rdf:type owl:NamedIndividual ,
+                                                                                            <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Airline> .
+
+
+###  http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/W_Warnock
+<http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/W_Warnock> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Author> ;
+                                                                                     <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasReview> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5#4> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+owl:Thing rdfs:comment "pec2" .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<urn:swrl:var#p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<urn:swrl:var#w> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CustomerSupport> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasValue> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#w>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#w> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 9 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentCustomerSupport> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightReservation> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasValue> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#w>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#w> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 9 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFlightReservation> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FoodService> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasValue> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <urn:swrl:var#w>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <urn:swrl:var#w> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 9 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> <http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFoodService> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <urn:swrl:var#p>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
