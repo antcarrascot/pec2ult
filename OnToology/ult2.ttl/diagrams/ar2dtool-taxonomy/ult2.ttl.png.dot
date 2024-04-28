@@ -1,0 +1,32 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; ":FlightComfort" ":Luggage" ":Speed" ":Service" ":Crew" ":Review" ":Aircraft" ":Quality" ":Sentiment" ":Aspect" ":FlightReservation" ":Position" ":FoodService" ":Cost" ":NegativeKeyword" ":CustomerSupport" ":Attention" ":FlightPunctuality" ":Size" ":Seat" ":ExcelentFlightReservation" ":PositiveKeyword" ":ExcelentCustomerSupport" ":FlightTicketManagement" ":Flight" ":ExcelentFoodService" ":Author" ":Class" ":CheckIn" ; /*classes style*/
+	":Class" -> ":Seat" [ label = "rdfs:subClassOf" ];
+	":CustomerSupport" -> ":Service" [ label = "rdfs:subClassOf" ];
+	":Author" -> ":Review" [ label = "rdfs:subClassOf" ];
+	":Seat" -> ":Flight" [ label = "rdfs:subClassOf" ];
+	":Position" -> ":Seat" [ label = "rdfs:subClassOf" ];
+	":NegativeKeyword" -> ":Sentiment" [ label = "rdfs:subClassOf" ];
+	":Cost" -> ":Aspect" [ label = "rdfs:subClassOf" ];
+	":FlightReservation" -> ":Service" [ label = "rdfs:subClassOf" ];
+	":Luggage" -> ":Service" [ label = "rdfs:subClassOf" ];
+	":Aircraft" -> ":Flight" [ label = "rdfs:subClassOf" ];
+	":ExcelentFoodService" -> ":FoodService" [ label = "rdfs:subClassOf" ];
+	":ExcelentCustomerSupport" -> ":CustomerSupport" [ label = "rdfs:subClassOf" ];
+	":Sentiment" -> ":Review" [ label = "rdfs:subClassOf" ];
+	":Size" -> ":Seat" [ label = "rdfs:subClassOf" ];
+	":PositiveKeyword" -> ":Sentiment" [ label = "rdfs:subClassOf" ];
+	":Speed" -> ":Aspect" [ label = "rdfs:subClassOf" ];
+	":Aspect" -> ":Review" [ label = "rdfs:subClassOf" ];
+	":ExcelentFlightReservation" -> ":FlightReservation" [ label = "rdfs:subClassOf" ];
+	":FlightTicketManagement" -> ":Service" [ label = "rdfs:subClassOf" ];
+	":Crew" -> ":Flight" [ label = "rdfs:subClassOf" ];
+	":Attention" -> ":Aspect" [ label = "rdfs:subClassOf" ];
+	":FlightComfort" -> ":Aspect" [ label = "rdfs:subClassOf" ];
+	":CheckIn" -> ":Service" [ label = "rdfs:subClassOf" ];
+	":FlightPunctuality" -> ":Aspect" [ label = "rdfs:subClassOf" ];
+	":Quality" -> ":Aspect" [ label = "rdfs:subClassOf" ];
+	":FoodService" -> ":Service" [ label = "rdfs:subClassOf" ];
+
+}

@@ -1,0 +1,154 @@
+{
+  "@context" : {
+    "FlightTicketManagement" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightTicketManagement"
+    },
+    "hasTitle" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasTitle",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "NegativeKeyword" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/NegativeKeyword"
+    },
+    "FoodService" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FoodService"
+    },
+    "hasRating" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasRating",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "Review" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Review"
+    },
+    "OriginFlight" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/OriginFlight",
+      "@type" : "@id"
+    },
+    "Country" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Country"
+    },
+    "ExcelentCustomerSupport" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentCustomerSupport"
+    },
+    "topDataProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+    },
+    "Class" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Class"
+    },
+    "hasValue" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasValue"
+    },
+    "Speed" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Speed"
+    },
+    "Sentiment" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Sentiment"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "FlightComfort" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightComfort"
+    },
+    "hasReview" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasReview",
+      "@type" : "@id"
+    },
+    "hasDatePublished" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasDatePublished",
+      "@type" : "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "DestinationFlight" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/DestinationFlight",
+      "@type" : "@id"
+    },
+    "Quality" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Quality"
+    },
+    "Crew" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Crew"
+    },
+    "topObjectProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+      "@type" : "@id"
+    },
+    "FlightReservation" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightReservation"
+    },
+    "hasFlight" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasFlight",
+      "@type" : "@id"
+    },
+    "Seat" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Seat"
+    },
+    "Luggage" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Luggage"
+    },
+    "Aircraft" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aircraft"
+    },
+    "isDefinedBy" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#isDefinedBy"
+    },
+    "Size" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Size"
+    },
+    "ExcelentFlightReservation" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFlightReservation"
+    },
+    "Position" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Position"
+    },
+    "Aspect" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Aspect"
+    },
+    "Attention" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Attention"
+    },
+    "Airline" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Airline"
+    },
+    "Flight" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Flight"
+    },
+    "Author" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Author"
+    },
+    "Cost" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Cost"
+    },
+    "hasAirline" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/hasAirline",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs"
+    },
+    "PositiveKeyword" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/PositiveKeyword"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Service" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/Service"
+    },
+    "FlightPunctuality" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/FlightPunctuality"
+    },
+    "TypeTraveller" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/TypeTraveller"
+    },
+    "CustomerSupport" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CustomerSupport"
+    },
+    "CheckIn" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/CheckIn"
+    },
+    "ExcelentFoodService" : {
+      "@id" : "http://www.semanticweb.org/antonio/ontologies/2024/3/untitled-ontology-5/ExcelentFoodService"
+    }
+  }
+}
